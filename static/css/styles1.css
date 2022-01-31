@@ -1,0 +1,29 @@
+*{
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.contenedor{
+    height: 400px;
+    width: 500px;
+    background-color:darkturquoise;
+    display:block;
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+}
+.datos{
+    font-size: 20px;
+    font-weight: 150;
+}
+.datos1{
+    text-align: center;
+}
+.go{
+    box-shadow: 5px 3px;
+    height: 30px;
+    background-color: dimgrey;
+    margin:20px
+
+}

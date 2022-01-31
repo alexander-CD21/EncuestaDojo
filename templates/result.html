@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href= {{ url_for( 'static' , filename = '/css/styles1.css')}}>
+        <title>Resultados</title>
+    </head>
+    <body>
+        <div class="contenedor">
+            <div class="datos1">
+                <h1>Submitted Info</h1>
+            </div>
+            <div class="imformacion">
+                <div class="datos" >Name: {{ session["nombre"]  }} </div>
+                
+                <div class="datos"> Dojo Location: {{ session["dojo"] }}</div>   
+                <div class="datos">Favorite Language: {{ session["lenguaje"] }}</div> 
+                <div class="datos" > Comment: {{ session["comentario"] }}</div>  
+            </div>
+            <form action="/regresar" method="GET" >
+                <button type="butmit" class="go">
+                    Go Back
+                </button>
+            </form>
+        </div>
+
+    </body>
+</html>

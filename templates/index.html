@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href= {{ url_for( 'static' , filename = '/css/styles.css')}}>
+        <title>Encuesta Dojo</title>
+    </head>
+    <body>
+        <div class="contenedor">
+            
+            <div class="titulo">
+                <h1>Dojo Survey</h1>
+            </div>
+
+            <div class="contenedor1">
+                <form action="/registroDojo" method="POST">
+                    <div class="name" >
+                        <label for="name"> Name:</label>
+                    </div>
+                    <div class="name1">
+                        <input type="text" id="name" name="name">
+                    </div>
+                    
+                    <div>
+                        <label for="dojoLocation"> DojoLocation:</label>
+                    </div>
+                    <div class="location">
+                        <input list="dojos" id="dojoLocation" name="dojoLocation" placeholder="--Select a Location--">
+                        <datalist id="dojos">
+                            <option value="Chicago">
+                            <option value="Nueva York">
+                            <option value="California">
+                            <option value="Texas">
+                            <option value="Silicon valley">
+                        </datalist>
+                    </div>
+                                        
+                    <div>
+                        <label for="language"> Favorite Language:</label>
+                    </div>
+                    <div class="languages">
+                        <input list="languages" id="language" name="language" placeholder="--Select Language--">
+                        <datalist id="languages">
+                            <option value="HTML">
+                            <option value="Python">
+                            <option value="CSS">
+                            <option value="JavaScript">
+                            <option value="C#">
+                        </datalist>            
+                    </div>
+    
+                    <div>
+                        <label for="comment"> Comments:</label>
+                    </div>
+                    <div class="comentario">
+                        <textarea id="comment" name="comment" rows="10" cols="50">        
+                        </textarea>
+                    </div>
+    
+                    <div class="mensajes">
+                            {% with messages = get_flashed_messages() %}
+                                {% for message in messages %}
+                                    <p>{{message}}</p>
+                                {% endfor %}
+                            {% endwith %}
+                        <button type="submit" class="boton">
+                            <span>Submit </span>
+                        </button>
+                    </div>
+                                                            
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
